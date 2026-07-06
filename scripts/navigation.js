@@ -1,15 +1,6 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const menuButton = document.getElementById("menu-button");
-    const navMenu = document.getElementById("nav-menu");
+const menuButton = document.querySelector('#menu-button');
+const navigation = document.querySelector('nav ul');
 
-    menuButton.addEventListener("click", () => {
-        navMenu.parentElement.classList.toggle("open");
-
-        // Dynamically toggle looking like an 'X' close button versus 3 bars
-        if (navMenu.parentElement.classList.contains("open")) {
-            menuButton.innerHTML = "&times;";
-        } else {
-            menuButton.innerHTML = "&#9776;";
-        }
-    });
+menuButton.addEventListener('click', () => {
+    navigation.classList.toggle('show');
 });

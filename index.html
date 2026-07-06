@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 
 <head>
     <meta charset="UTF-8">
@@ -7,6 +7,7 @@
     <title>WDD 231 - Web Frontend Development | Norlin Vicente Montenegro</title>
     <meta name="description"
         content="Course portal for Norlin Vicente Montenegro in WDD 231: Web Frontend Development, showcasing student projects and details on Flores, Petén, Guatemala.">
+    <meta name="author" content="Norlin Vicente Montenegro">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,63 +28,57 @@
     <header>
         <div class="header-container">
             <img src="images/logo.svg" alt="WDD 231 Course Logo" width="50" height="50">
-            <h1>Norlin Vicente Montenegro</h1>
+            <span>Norlin Vicente Montenegro</span>
         </div>
-        <button id="menu-button" aria-label="Toggle Menu">&#9776;</button>
+        <button id="menu-button" aria-label="Toggle Menu">☰</button>
         <nav>
-            <ul id="nav-menu">
+            <ul>
                 <li><a href="#" class="active">Home</a></li>
                 <li><a href="chamber/index.html">Chamber</a></li>
-                <li><a href="https://github.com" target="_blank" rel="noopener">GitHub Profile</a></li>
-                <li><a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a></li>
+                <li><a href="https://github.com" target="_blank">GitHub Profile</a></li>
+                <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <div class="grid-container">
-            <section class="card profile-info">
-                <h2>About Me</h2>
-                <div class="profile-layout">
-                    <img src="images/profile.webp" alt="Norlin Vicente Montenegro Headshot" width="130" height="130"
-                        loading="lazy">
-                    <div class="bio-text">
-                        <h3>Hello, I'm Norlin</h3>
-                        <p>I am a software development student with academic backgrounds in both Business Administration
-                            and Psychology. Blending strategy, human psychology, and technology allows me to tackle
-                            coding projects with a unique, business-centric workflow.</p>
-                        <p class="hometown-tag">📍 <strong>Base Focus:</strong> Flores, Petén, Guatemala 🇬🇹</p>
-                    </div>
-                </div>
-            </section>
+        <h1>WDD 231: Web Frontend Development</h1>
 
-            <section class="card hometown-highlight">
-                <h2>Flores, Petén, Guatemala</h2>
-                <p>Flores is an architectural island jewel positioned elegantly on Lake Petén Itzá. Serving as the
-                    gateway to ancient Mayan history (like Tikal), it thrives on a dynamic mix of international tourism
-                    and tight-knit corporate communities—presenting an ideal infrastructure canvas for our future
-                    Chamber of Commerce project portal.</p>
-            </section>
+        <section class="card profile-layout">
+            <h2>About Me</h2>
+            <img src="images/profile.webp" alt="Norlin Vicente Montenegro Headshot" width="150" height="150">
+            <div>
+                <h3>Norlin Vicente Montenegro</h3>
+                <p>Hello! I am a business owner based out of the beautiful island city of <strong>Flores, Petén,
+                        Guatemala</strong>. Welcome to my web frontend development course portal.</p>
+            </div>
+        </section>
 
-            <section class="card course-work">
-                <h2>Course Work Portfolio</h2>
-                <div class="filter-buttons">
-                    <button id="btn-all" class="filter-btn active">All Courses</button>
-                    <button id="btn-cse" class="filter-btn">CSE</button>
-                    <button id="btn-wdd" class="filter-btn">WDD</button>
-                </div>
+        <section class="card">
+            <h2>Flores, Petén, Guatemala</h2>
+            <p>Flores is the capital of the Petén department. It is famous for its historic, colonial-style island
+                layout on Lake Petén Itzá, acting as a gateway to ancient Mayan ruins.</p>
+        </section>
 
-                <div id="course-list" class="course-grid"></div>
+        <section class="card">
+            <h2>Course Work</h2>
+            <div class="filter-buttons">
+                <button id="btn-all" class="filter-btn active">All</button>
+                <button id="btn-wdd" class="filter-btn">WDD</button>
+                <button id="btn-cse" class="filter-btn">CSE</button>
+            </div>
 
-                <div class="total-credits">
-                    <p>Total Filtered Credits Required: <span id="credits-count">0</span></p>
-                </div>
-            </section>
-        </div>
+            <div id="course-container" class="grid-container">
+            </div>
+
+            <div class="total-credits">
+                <strong>Total Credits: </strong><span id="total-credits">0</span>
+            </div>
+        </section>
     </main>
 
     <footer>
-        <p>&copy; <span id="current-year"></span> | Norlin Vicente Montenegro | Richmond, VA & Guatemala</p>
+        <p>&copy; <span id="current-year"></span> | Norlin Vicente Montenegro | Flores, Petén, Guatemala</p>
         <p id="last-modified"></p>
     </footer>
 </body>
