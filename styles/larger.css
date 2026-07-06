@@ -1,0 +1,30 @@
+@media (min-width: 768px) {
+    #menu-toggle {
+        display: none;
+    }
+
+    #primary-nav {
+        display: flex !important;
+        flex-direction: row;
+        position: static;
+        width: auto;
+        background: none;
+    }
+
+    #primary-nav a {
+        border-bottom: none;
+        padding: 10px 20px;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 25px;
+    }
+
+    #courses-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+}
