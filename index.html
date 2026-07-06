@@ -4,14 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WDD 231 - Course Home Page</title>
+    <title>WDD 231 - Web Frontend Development | Norlin Vicente Montenegro</title>
     <meta name="description"
-        content="Course home page for WDD 231: Web Frontend Development, featuring course listings, filtering capabilities, and a responsive layout.">
-    <meta name="author" content="Your Name">
+        content="Course portal for Norlin Vicente Montenegro in WDD 231: Web Frontend Development, showcasing student projects and details on Flores, Petén, Guatemala.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/small.css">
@@ -24,61 +25,66 @@
 
 <body>
     <header>
-        <div class="header-title">
+        <div class="header-container">
             <img src="images/logo.svg" alt="WDD 231 Course Logo" width="50" height="50">
-            <span>Your Name</span>
+            <h1>Norlin Vicente Montenegro</h1>
         </div>
-        <button id="menu-toggle" aria-label="Toggle navigation menu">☰</button>
-        <nav id="primary-nav">
-            <a href="#" class="active">Home</a>
-            <a href="chamber/index.html">Chamber Project</a>
-            <a href="final/index.html">Final Project</a>
+        <button id="menu-button" aria-label="Toggle Menu">&#9776;</button>
+        <nav>
+            <ul id="nav-menu">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="chamber/index.html">Chamber</a></li>
+                <li><a href="https://github.com" target="_blank" rel="noopener">GitHub Profile</a></li>
+                <li><a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a></li>
+            </ul>
         </nav>
     </header>
 
     <main>
-        <h1>Home</h1>
-
         <div class="grid-container">
-            <section class="card about-me">
+            <section class="card profile-info">
                 <h2>About Me</h2>
-                <p>Massa Facilisis Per Purus Si Imperdiet Curae Amet. Et Fames Lorem Mi Phasellus Congue Nascetur Enim
-                    Consectetur Sociosqu Natoque Risus. Odio Vehicula Libero Nisl Viverra Augue Commodo Pretium Vivamus
-                    At Duis Magna. Quam Fringilla Convallis Ridiculus Malesuada Accumsan Potenti Magnis Volutpat Nulla
-                    Ipsum.</p>
+                <div class="profile-layout">
+                    <img src="images/profile.webp" alt="Norlin Vicente Montenegro Headshot" width="130" height="130"
+                        loading="lazy">
+                    <div class="bio-text">
+                        <h3>Hello, I'm Norlin</h3>
+                        <p>I am a software development student with academic backgrounds in both Business Administration
+                            and Psychology. Blending strategy, human psychology, and technology allows me to tackle
+                            coding projects with a unique, business-centric workflow.</p>
+                        <p class="hometown-tag">📍 <strong>Base Focus:</strong> Flores, Petén, Guatemala 🇬🇹</p>
+                    </div>
+                </div>
             </section>
 
-            <section class="card student-photo">
-                <h2>Student Photo</h2>
-                <img src="images/profile.webp" alt="Profile photograph of student" width="300" height="300"
-                    loading="lazy">
+            <section class="card hometown-highlight">
+                <h2>Flores, Petén, Guatemala</h2>
+                <p>Flores is an architectural island jewel positioned elegantly on Lake Petén Itzá. Serving as the
+                    gateway to ancient Mayan history (like Tikal), it thrives on a dynamic mix of international tourism
+                    and tight-knit corporate communities—presenting an ideal infrastructure canvas for our future
+                    Chamber of Commerce project portal.</p>
+            </section>
+
+            <section class="card course-work">
+                <h2>Course Work Portfolio</h2>
+                <div class="filter-buttons">
+                    <button id="btn-all" class="filter-btn active">All Courses</button>
+                    <button id="btn-cse" class="filter-btn">CSE</button>
+                    <button id="btn-wdd" class="filter-btn">WDD</button>
+                </div>
+
+                <div id="course-list" class="course-grid"></div>
+
+                <div class="total-credits">
+                    <p>Total Filtered Credits Required: <span id="credits-count">0</span></p>
+                </div>
             </section>
         </div>
-
-        <section class="card courses-section">
-            <h2>Web Certificate Courses</h2>
-            <div class="filter-buttons">
-                <button id="btn-all" class="filter-btn active">All</button>
-                <button id="btn-cse" class="filter-btn">CSE</button>
-                <button id="btn-wdd" class="filter-btn">WDD</button>
-            </div>
-
-            <div id="courses-container">
-            </div>
-
-            <p id="total-credits-wrapper">The total credits for course listed above is <span id="total-credits">0</span>
-            </p>
-        </section>
     </main>
 
     <footer>
-        <div class="social-links">
-            <a href="https://github.com" target="_blank" rel="noopener" aria-label="Visit our GitHub profile">GitHub</a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="Connect on LinkedIn">LinkedIn</a>
-            <a href="https://x.com" target="_blank" rel="noopener" aria-label="Follow us on X">X</a>
-        </div>
-        <p>&copy; <span id="current-year"></span> Your Name | Utah, USA</p>
-        <p id="lastModified"></p>
+        <p>&copy; <span id="current-year"></span> | Norlin Vicente Montenegro | Richmond, VA & Guatemala</p>
+        <p id="last-modified"></p>
     </footer>
 </body>
 

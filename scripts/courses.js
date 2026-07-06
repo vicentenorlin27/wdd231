@@ -1,49 +1,61 @@
 const courses = [
     { subject: 'CSE', number: 110, title: 'Introduction to Programming', credits: 2, completed: true },
     { subject: 'WDD', number: 130, title: 'Web Fundamentals', credits: 2, completed: true },
-    { subject: 'CSE', number: 111, title: 'Programming with Functions', credits: 2, completed: false },
-    { subject: 'WDD', number: 131, title: 'Web Frontend Development I', credits: 2, completed: true },
-    { subject: 'CSE', number: 210, title: 'Programming with Classes', credits: 2, completed: false },
+    { subject: 'CSE', number: 111, title: 'Programming with Functions', credits: 3, completed: true },
+    { subject: 'CSE', number: 210, title: 'Programming with Classes', credits: 3, completed: false },
+    { subject: 'WDD', number: 131, title: 'Web Frontend Development I', credits: 3, completed: true },
     { subject: 'WDD', number: 231, title: 'Web Frontend Development II', credits: 3, completed: false }
 ];
 
-const container = document.getElementById('courses-container');
-const totalCreditsDisplay = document.getElementById('total-credits');
-const buttons = document.querySelectorAll('.filter-btn');
+document.addEventListener("DOMContentLoaded", () => {
+    const courseContainer = document.getElementById("course-list");
+    const creditsCountSpan = document.getElementById("credits-count");
 
-function displayCourses(filteredCourses) {
-    // Clear old container details
-    container.innerHTML = '';
+    const btnAll = document.getElementById("btn-all");
+    const btnCse = document.getElementById("btn-cse");
+    const btnWdd = document.getElementById("btn-wdd");
 
-    // Generate card block DOM structures
-    filteredCourses.forEach(course => {
-        const card = document.createElement('div');
-        card.className = `course-card ${course.completed ? 'completed' : ''}`;
-        card.textContent = `${course.subject} ${course.number}`;
-        container.appendChild(card);
+    // Primary loop function rendering dynamic cards
+    function displayCourses(filteredCourses) {
+        courseContainer.innerHTML = ""; // Empty container
+
+        filteredCourses.forEach(course => {
+            const courseDiv = document.createElement("div");
+            // Dynamic check injecting conditional styles for classes completed
+            courseDiv.className = `course-item ${course.completed ? 'completed' : 'pending'}`;
+            courseDiv.innerHTML = `<span>${course.subject} ${course.number}</span>`;
+            courseContainer.appendChild(courseDiv);
+        });
+
+        // Dynamic use of reduce() to sum credit variables based on active selection
+        const totalCredits = filteredCourses.reduce((sum, course) => sum + course.credits, 0);
+        creditsCountSpan.textContent = totalCredits;
+    }
+
+    // Set interactive visual states among active filter items
+    function setActiveButton(activeBtn) {
+        [btnAll, btnCse, btnWdd].forEach(btn => btn.classList.remove("active"));
+        activeBtn.classList.add("active");
+    }
+
+    // Add Event Listeners
+    btnAll.addEventListener("click", () => {
+        displayCourses(courses);
+        setActiveButton(btnAll);
     });
 
-    // Compute credit updates dynamically via reduce logic
-    const totalCredits = filteredCourses.reduce((sum, course) => sum + course.credits, 0);
-    totalCreditsDisplay.textContent = totalCredits;
-}
-
-// Attach filtering event structural handlers
-buttons.forEach(button => {
-    button.addEventListener('click', (e) => {
-        buttons.forEach(btn => btn.classList.remove('active'));
-        e.target.classList.add('active');
-
-        const filterId = e.target.id;
-        if (filterId === 'btn-cse') {
-            displayCourses(courses.filter(c => c.subject === 'CSE'));
-        } else if (filterId === 'btn-wdd') {
-            displayCourses(courses.filter(c => c.subject === 'WDD'));
-        } else {
-            displayCourses(courses);
-        }
+    btnCse.addEventListener("click", () => {
+        const cseCourses = courses.filter(course => course.subject === 'CSE');
+        displayCourses(cseCourses);
+        setActiveButton(btnCse);
     });
+
+    btnWdd.addEventListener("click", () => {
+        const wddCourses = courses.filter(course => course.subject === 'WDD');
+        displayCourses(wddCourses);
+        setActiveButton(btnWdd);
+    });
+
+    // Run Initial Load configuration
+    displayCourses(courses);
 });
-
-// Run initial payload execution loop
-displayCourses(courses);

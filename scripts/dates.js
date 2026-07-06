@@ -1,5 +1,13 @@
-// Calculate current year
-document.getElementById('current-year').textContent = new Date().getFullYear();
+document.addEventListener("DOMContentLoaded", () => {
+    // Dynamically display the current year
+    const currentYearSpan = document.getElementById("current-year");
+    if (currentYearSpan) {
+        currentYearSpan.textContent = new Date().getFullYear();
+    }
 
-// Display standard last modified sequence details
-document.getElementById('lastModified').textContent = `Last Modification: ${document.lastModified}`;
+    // Capture precise file system manipulation stamp
+    const lastModifiedParagraph = document.getElementById("last-modified");
+    if (lastModifiedParagraph) {
+        lastModifiedParagraph.textContent = `Last Modified: ${document.lastModified}`;
+    }
+});
