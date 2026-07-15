@@ -1,0 +1,65 @@
+[
+    {
+        "name": "Vicente Construction LLC",
+        "address": "450 Enterprise Way, Carlsbad, CA 92008",
+        "phone": "(760) 555-0812",
+        "website": "https://vicenteconstruction.example.com",
+        "image": "images/members/member1.webp",
+        "membership": 3,
+        "tagline": "Building strong foundations and quality custom homes across the coast."
+    },
+    {
+        "name": "Pacific Coast Bakery",
+        "address": "101 Ocean Blvd, Carlsbad, CA 92008",
+        "phone": "(760) 555-0192",
+        "website": "https://pacificcoastbakery.example.com",
+        "image": "images/members/member2.webp",
+        "membership": 2,
+        "tagline": "Fresh organic sourdough and artisan pastries baked daily."
+    },
+    {
+        "name": "Beacon Tech Solutions",
+        "address": "400 Grand Ave, Suite C, Carlsbad, CA 92008",
+        "phone": "(760) 555-0243",
+        "website": "https://beacontech.example.com",
+        "image": "images/members/member3.webp",
+        "membership": 3,
+        "tagline": "Reliable enterprise IT support, network security, and cloud migrations."
+    },
+    {
+        "name": "Vista Valley Law Group",
+        "address": "850 Carlsbad Village Dr, Carlsbad, CA 92008",
+        "phone": "(760) 555-0311",
+        "website": "https://vistavalleylaw.example.com",
+        "image": "images/members/member4.webp",
+        "membership": 1,
+        "tagline": "Securing local family estates, business assets, and peace of mind."
+    },
+    {
+        "name": "Summit Co-Working Space",
+        "address": "1200 Marron Rd, Carlsbad, CA 92008",
+        "phone": "(760) 555-0455",
+        "website": "https://summitcowork.example.com",
+        "image": "images/members/member5.webp",
+        "membership": 2,
+        "tagline": "Modern shared workspaces designed for local creatives and remote teams."
+    },
+    {
+        "name": "Coastal Dental Care",
+        "address": "2100 Carlsbad Blvd, Carlsbad, CA 92008",
+        "phone": "(760) 555-0589",
+        "website": "https://coastaldental.example.com",
+        "image": "images/members/member6.webp",
+        "membership": 1,
+        "tagline": "Gentle, comprehensive family-oriented general dentistry."
+    },
+    {
+        "name": "Breeze Surf School",
+        "address": "300 Carlsbad State Beach, Carlsbad, CA 92008",
+        "phone": "(760) 555-0677",
+        "website": "https://breezesurf.example.com",
+        "image": "images/members/member7.webp",
+        "membership": 3,
+        "tagline": "Private, safe, and professional surfing lessons for all ages."
+    }
+]

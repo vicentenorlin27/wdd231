@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chamber of Commerce - Business Directory</title>
+    <meta name="description"
+        content="Explore and connect with local businesses in our active Chamber of Commerce Business Directory. Supports grid and list views.">
+    <meta name="author" content="Your Name">
+
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <meta property="og:title" content="Chamber of Commerce - Business Directory">
+    <meta property="og:description" content="Discover professional and reliable local community business partners.">
+    <meta property="og:image" content="https://yourusername.github.io/wdd231/chamber/images/directory-share.jpg">
+    <meta property="og:url" content="https://yourusername.github.io/wdd231/chamber/directory.html">
+    <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/normalize.css" defer>
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo-area">
+            <img src="images/logo.svg" alt="Chamber Logo" width="80" height="80">
+            <div>
+                <h1>Chamber of Commerce</h1>
+                <p class="tagline">Fostering Community & Innovation</p>
+            </div>
+        </div>
+        <button id="menu-toggle" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <nav>
+        <ul id="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="directory.html" class="active">Directory</a></li>
+            <li><a href="discover.html">Discover</a></li>
+            <li><a href="join.html">Join</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h2>Business Directory</h2>
+
+        <div class="view-controls">
+            <button id="grid-btn" class="active" aria-label="Grid View">Grid View</button>
+            <button id="list-btn" aria-label="List View">List View</button>
+        </div>
+
+        <article id="directory-container" class="grid-view">
+        </article>
+    </main>
+
+    <footer>
+        <div class="footer-info">
+            <p><strong>Chamber of Commerce</strong></p>
+            <p>123 Main Street, Suite 100 | San José, Costa Rica</p>
+            <p>info@chamber.org | +506 2233-4455</p>
+        </div>
+        <hr>
+        <div class="footer-meta">
+            <p>&copy; <span id="current-year"></span> Your Name | WDD 231 Project</p>
+            <p>Last Modified: <span id="last-modified"></span></p>
+        </div>
+    </footer>
+
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/directory.js" defer></script>
+</body>
+
+</html>
