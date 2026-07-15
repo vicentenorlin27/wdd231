@@ -1,48 +1,107 @@
 const courses = [
-    { subject: 'WDD', number: 130, title: 'Web Fundamentals', credits: 2, completed: true },
-    { subject: 'WDD', number: 131, title: 'Dynamic Web Fundamentals', credits: 2, completed: true },
-    { subject: 'CSE', number: 121b, title: 'Introduction to Programming', credits: 3, completed: true },
-    { subject: 'WDD', number: 231, title: 'Web Frontend Development II', credits: 3, completed: false },
-    { subject: 'CSE', number: 210, title: 'Programming with Classes', credits: 3, completed: false },
-    { subject: 'WDD', number: 330, title: 'Web Frontend Development III', credits: 3, completed: false }
+    {
+        subject: 'CSE',
+        number: 110,
+        title: 'Introduction to Programming',
+        credits: 2,
+        certificate: 'Web and Computer Programming',
+        description: 'This course will introduce the basic concepts of computer programming...',
+        completed: true
+    },
+    {
+        subject: 'WDD',
+        number: 130,
+        title: 'Web Fundamentals',
+        credits: 2,
+        certificate: 'Web and Computer Programming',
+        description: 'This course introduces students to the World Wide Web and to markup languages...',
+        completed: true
+    },
+    {
+        subject: 'CSE',
+        number: 111,
+        title: 'Programming with Functions',
+        credits: 2,
+        certificate: 'Web and Computer Programming',
+        description: 'Students become more proficient with programming as they write, run, and test...',
+        completed: true
+    },
+    {
+        subject: 'WDD',
+        number: 131,
+        title: 'Dynamic Web Fundamentals',
+        credits: 2,
+        certificate: 'Web and Computer Programming',
+        description: 'This course builds on prior experience with HTML and CSS to focus on JavaScript...',
+        completed: true
+    },
+    {
+        subject: 'CSE',
+        number: 210,
+        title: 'Programming with Classes',
+        credits: 2,
+        certificate: 'Web and Computer Programming',
+        description: 'This course introduces the concepts of object-oriented programming using classes...',
+        completed: false
+    },
+    {
+        subject: 'WDD',
+        number: 231,
+        title: 'Web Frontend Development I',
+        credits: 2,
+        certificate: 'Web and Computer Programming',
+        description: 'This course focuses on user experience, accessibility, compliance, and API usage...',
+        completed: false
+    }
 ];
 
-const container = document.querySelector('#course-container');
-const totalCreditsEl = document.querySelector('#total-credits');
+const courseContainer = document.getElementById("course-container");
+const creditsValue = document.getElementById("credits-value");
 
 function displayCourses(filteredCourses) {
-    container.innerHTML = '';
+    courseContainer.innerHTML = "";
+
     filteredCourses.forEach(course => {
-        const div = document.createElement('div');
-        div.classList.add('course-item');
-        if (course.completed) div.classList.add('completed');
-        div.textContent = `${course.subject} ${course.number}`;
-        container.appendChild(div);
+        const card = document.createElement("div");
+        card.classList.add("course-card");
+        if (course.completed) {
+            card.classList.add("completed");
+        }
+
+        card.innerHTML = `${course.subject} ${course.number}`;
+        courseContainer.appendChild(card);
     });
 
-    const credits = filteredCourses.reduce((sum, course) => sum + course.credits, 0);
-    totalCreditsEl.textContent = credits;
+    const totalCredits = filteredCourses.reduce((sum, course) => sum + course.credits, 0);
+    creditsValue.textContent = totalCredits;
 }
 
-document.querySelector('#btn-all').addEventListener('click', (e) => {
-    setActive(e.target);
+const btnAll = document.getElementById("filter-all");
+const btnCse = document.getElementById("filter-cse");
+const btnWdd = document.getElementById("filter-wdd");
+
+function clearActiveStatus() {
+    [btnAll, btnCse, btnWdd].forEach(btn => btn.classList.remove("active"));
+}
+
+btnAll.addEventListener("click", () => {
+    clearActiveStatus();
+    btnAll.classList.add("active");
     displayCourses(courses);
 });
 
-document.querySelector('#btn-wdd').addEventListener('click', (e) => {
-    setActive(e.target);
-    displayCourses(courses.filter(c => c.subject === 'WDD'));
+btnCse.addEventListener("click", () => {
+    clearActiveStatus();
+    btnCse.classList.add("active");
+    const cseCourses = courses.filter(course => course.subject === "CSE");
+    displayCourses(cseCourses);
 });
 
-document.querySelector('#btn-cse').addEventListener('click', (e) => {
-    setActive(e.target);
-    displayCourses(courses.filter(c => c.subject === 'CSE'));
+btnWdd.addEventListener("click", () => {
+    clearActiveStatus();
+    btnWdd.classList.add("active");
+    const wddCourses = courses.filter(course => course.subject === "WDD");
+    displayCourses(wddCourses);
 });
 
-function setActive(button) {
-    document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-    button.classList.add('active');
-}
-
-// Initial initialization
 displayCourses(courses);
