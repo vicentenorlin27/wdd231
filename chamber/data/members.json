@@ -1,65 +1,65 @@
 [
     {
-        "name": "Vicente Construction LLC",
-        "address": "450 Enterprise Way, Carlsbad, CA 92008",
-        "phone": "(760) 555-0812",
-        "website": "https://vicenteconstruction.example.com",
-        "image": "images/members/member1.webp",
+        "name": "Vicente Construction Solutions",
+        "address": "7800 Midlothian Turnpike, Richmond, VA 23235",
+        "phone": "(804) 555-1001",
+        "website": "https://vicentenorlin27.github.io/vicente-Construction-LLC/",
+        "image": "member-construction.webp",
         "membership": 3,
-        "tagline": "Building strong foundations and quality custom homes across the coast."
+        "description": "Commercial doors, framing, drywall, finishing, trim, and residential improvement services."
     },
     {
-        "name": "Pacific Coast Bakery",
-        "address": "101 Ocean Blvd, Carlsbad, CA 92008",
-        "phone": "(760) 555-0192",
-        "website": "https://pacificcoastbakery.example.com",
-        "image": "images/members/member2.webp",
+        "name": "Capital Technology Group",
+        "address": "2101 East Main Street, Richmond, VA 23223",
+        "phone": "(804) 555-1002",
+        "website": "https://example.com/",
+        "image": "member-tech.webp",
         "membership": 2,
-        "tagline": "Fresh organic sourdough and artisan pastries baked daily."
+        "description": "Technology consulting, software development, cybersecurity, and IT support for local organizations."
     },
     {
-        "name": "Beacon Tech Solutions",
-        "address": "400 Grand Ave, Suite C, Carlsbad, CA 92008",
-        "phone": "(760) 555-0243",
-        "website": "https://beacontech.example.com",
-        "image": "images/members/member3.webp",
-        "membership": 3,
-        "tagline": "Reliable enterprise IT support, network security, and cloud migrations."
-    },
-    {
-        "name": "Vista Valley Law Group",
-        "address": "850 Carlsbad Village Dr, Carlsbad, CA 92008",
-        "phone": "(760) 555-0311",
-        "website": "https://vistavalleylaw.example.com",
-        "image": "images/members/member4.webp",
-        "membership": 1,
-        "tagline": "Securing local family estates, business assets, and peace of mind."
-    },
-    {
-        "name": "Summit Co-Working Space",
-        "address": "1200 Marron Rd, Carlsbad, CA 92008",
-        "phone": "(760) 555-0455",
-        "website": "https://summitcowork.example.com",
-        "image": "images/members/member5.webp",
+        "name": "Virginia Green Landscaping",
+        "address": "4500 Forest Hill Avenue, Richmond, VA 23225",
+        "phone": "(804) 555-1003",
+        "website": "https://example.com/",
+        "image": "member-green.webp",
         "membership": 2,
-        "tagline": "Modern shared workspaces designed for local creatives and remote teams."
+        "description": "Professional landscaping, lawn maintenance, planting, and outdoor property improvement services."
     },
     {
-        "name": "Coastal Dental Care",
-        "address": "2100 Carlsbad Blvd, Carlsbad, CA 92008",
-        "phone": "(760) 555-0589",
-        "website": "https://coastaldental.example.com",
-        "image": "images/members/member6.webp",
+        "name": "Richmond Creative Studio",
+        "address": "315 West Broad Street, Richmond, VA 23220",
+        "phone": "(804) 555-1004",
+        "website": "https://example.com/",
+        "image": "member-creative.webp",
         "membership": 1,
-        "tagline": "Gentle, comprehensive family-oriented general dentistry."
+        "description": "Brand development, graphic design, photography, digital media, and marketing services."
     },
     {
-        "name": "Breeze Surf School",
-        "address": "300 Carlsbad State Beach, Carlsbad, CA 92008",
-        "phone": "(760) 555-0677",
-        "website": "https://breezesurf.example.com",
-        "image": "images/members/member7.webp",
+        "name": "Summit Business Solutions",
+        "address": "1001 Haxall Point, Richmond, VA 23219",
+        "phone": "(804) 555-1005",
+        "website": "https://example.com/",
+        "image": "member-summit.webp",
         "membership": 3,
-        "tagline": "Private, safe, and professional surfing lessons for all ages."
+        "description": "Business consulting, project planning, operations support, and professional development services."
+    },
+    {
+        "name": "Dominion Financial Services",
+        "address": "901 East Byrd Street, Richmond, VA 23219",
+        "phone": "(804) 555-1006",
+        "website": "https://example.com/",
+        "image": "member-finance.webp",
+        "membership": 3,
+        "description": "Financial planning, bookkeeping, budgeting, and advisory services for individuals and businesses."
+    },
+    {
+        "name": "River City Coffee House",
+        "address": "1700 West Main Street, Richmond, VA 23220",
+        "phone": "(804) 555-1007",
+        "website": "https://example.com/",
+        "image": "member-cafe.webp",
+        "membership": 1,
+        "description": "Locally roasted coffee, baked goods, meeting space, and community-focused events."
     }
 ]

@@ -1,64 +1,130 @@
-const jsonURL = "data/members.json";
-const container = document.getElementById("directory-container");
-const gridBtn = document.getElementById("grid-btn");
-const listBtn = document.getElementById("list-btn");
+const membersURL = "data/members.json";
 
-// Handle Footer Year and Modification Metadata
-document.getElementById("current-year").textContent = new Date().getFullYear();
-document.getElementById("last-modified").textContent = document.lastModified;
+const directoryContainer = document.querySelector("#directory-container");
+const gridButton = document.querySelector("#grid-btn");
+const listButton = document.querySelector("#list-btn");
+const currentYear = document.querySelector("#current-year");
+const lastModified = document.querySelector("#last-modified");
 
-// Fetch and display members
-async function getMembers() {
-    try {
-        const response = await fetch(jsonURL);
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        const data = await response.json();
-        displayMembers(data);
-    } catch (error) {
-        console.error("Failed to load members directory:", error);
-        container.innerHTML = `<p class="error">Unable to load directory information at this time.</p>`;
+function getMembershipName(level) {
+    switch (level) {
+        case 3:
+            return "Gold Member";
+        case 2:
+            return "Silver Member";
+        default:
+            return "Member";
     }
 }
 
 function displayMembers(members) {
-    container.innerHTML = ""; // Clear loader container placeholder
+    directoryContainer.innerHTML = "";
 
-    members.forEach(member => {
+    members.forEach((member) => {
         const card = document.createElement("section");
-        card.className = "member-card";
+        card.classList.add("member-card");
 
-        // Map Membership level tier string representation
-        let memTier = "Bronze/Member";
-        if (member.membership === 3) memTier = "Gold Partner";
-        if (member.membership === 2) memTier = "Silver Partner";
+        const image = document.createElement("img");
+        image.src = `images/${member.image}`;
+        image.alt = `${member.name} business logo`;
+        image.width = 160;
+        image.height = 120;
+        image.loading = "lazy";
 
-        card.innerHTML = `
-      <img src="${member.image}" alt="${member.name} Logo" loading="lazy">
-      <h3>${member.name}</h3>
-      <p class="membership-badge">${memTier}</p>
-      <p>${member.address}</p>
-      <p>${member.phone}</p>
-      <p><a href="${member.website}" target="_blank" rel="noopener noreferrer">Visit Website</a></p>
-      <p class="member-other">${member.other}</p>
-    `;
-        container.appendChild(card);
+        const name = document.createElement("h2");
+        name.textContent = member.name;
+
+        const membership = document.createElement("p");
+        membership.classList.add("membership-badge");
+        membership.textContent = getMembershipName(member.membership);
+
+        const description = document.createElement("p");
+        description.classList.add("member-description");
+        description.textContent = member.description;
+
+        const address = document.createElement("p");
+        address.classList.add("member-address");
+        address.textContent = member.address;
+
+        const phone = document.createElement("p");
+
+        const phoneLink = document.createElement("a");
+        phoneLink.href = `tel:${member.phone.replace(/[^\d+]/g, "")}`;
+        phoneLink.textContent = member.phone;
+        phone.appendChild(phoneLink);
+
+        const website = document.createElement("p");
+
+        const websiteLink = document.createElement("a");
+        websiteLink.href = member.website;
+        websiteLink.target = "_blank";
+        websiteLink.rel = "noopener noreferrer";
+        websiteLink.textContent = "Visit Website";
+        website.appendChild(websiteLink);
+
+        card.append(
+            image,
+            name,
+            membership,
+            description,
+            address,
+            phone,
+            website
+        );
+
+        directoryContainer.appendChild(card);
     });
 }
 
-// Toggle View Event Listeners
-gridBtn.addEventListener("click", () => {
-    container.className = "grid-view";
-    gridBtn.classList.add("active");
-    listBtn.classList.remove("active");
-});
+async function getMembers() {
+    try {
+        const response = await fetch(membersURL);
 
-listBtn.addEventListener("click", () => {
-    container.className = "list-view";
-    listBtn.classList.add("active");
-    gridBtn.classList.remove("active");
-});
+        if (!response.ok) {
+            throw new Error(
+                `Unable to load member data. HTTP status: ${response.status}`
+            );
+        }
 
-// Execute Fetch on Page Mount
+        const members = await response.json();
+        displayMembers(members);
+    } catch (error) {
+        console.error("Directory error:", error);
+
+        directoryContainer.innerHTML = `
+            <p class="error-message">
+                The business directory could not be loaded. Please try again later.
+            </p>
+        `;
+    }
+}
+
+function showGridView() {
+    directoryContainer.classList.add("grid-view");
+    directoryContainer.classList.remove("list-view");
+
+    gridButton.classList.add("active");
+    listButton.classList.remove("active");
+
+    gridButton.setAttribute("aria-pressed", "true");
+    listButton.setAttribute("aria-pressed", "false");
+}
+
+function showListView() {
+    directoryContainer.classList.add("list-view");
+    directoryContainer.classList.remove("grid-view");
+
+    listButton.classList.add("active");
+    gridButton.classList.remove("active");
+
+    listButton.setAttribute("aria-pressed", "true");
+    gridButton.setAttribute("aria-pressed", "false");
+}
+
+gridButton.addEventListener("click", showGridView);
+listButton.addEventListener("click", showListView);
+
+currentYear.textContent = new Date().getFullYear();
+lastModified.textContent = `Last Modification: ${document.lastModified}`;
+
 getMembers();
