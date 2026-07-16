@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-labelledby="weather-title">
+
+    <title id="weather-title">Weather placeholder</title>
+
+    <circle cx="42" cy="38" r="22" fill="#f4b942"></circle>
+
+    <path d="M28 72h48a14 14 0 0 0 0-28
+        22 22 0 0 0-42-5
+        17 17 0 0 0-6 33Z" fill="#dbeafe" stroke="#17365d" stroke-width="4"></path>
+</svg>
