@@ -1,133 +1,52 @@
 @media only screen and (min-width: 48rem) {
     header {
-        padding: 1rem 2rem;
+        display: flex;
+        flex-direction: column;
     }
 
-    .logo-area img {
-        width: 76px;
-        height: 76px;
+    .header-top {
+        width: 100%;
     }
 
-    .site-name span {
-        font-size: 1.45rem;
-    }
-
-    .site-name strong {
-        font-size: 1rem;
-    }
-
-    .tagline {
-        display: block;
-    }
-
-    #menu-toggle {
+    #menu-button {
         display: none;
     }
 
-    #nav-menu {
+    #navigation {
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: flex-start;
+        padding-left: max(1rem,
+                calc((100% - 1200px) / 2 + 1rem));
+        background-color: var(--primary-dark);
     }
 
-    #nav-menu li {
-        width: min(180px, 25%);
+    #navigation a {
+        padding: 0.75rem 2rem;
+        border-top: none;
     }
 
-    #nav-menu a {
-        border-right:
-            1px solid rgb(255 255 255 / 15%);
-        border-bottom: none;
-    }
-
-    main {
-        padding: 2rem;
-    }
-
-    .grid-view {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
+    .grid-container {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
         gap: 1.5rem;
     }
 
-    .list-view .member-card {
+    .info-card {
+        grid-column: 1 / 2;
+    }
+
+    .photo-card {
+        grid-column: 2 / 3;
+    }
+
+    .courses-card {
+        grid-column: 1 / 3;
+    }
+
+    .courses-grid {
         display: grid;
-        grid-template-columns:
-            minmax(180px, 1.5fr) minmax(220px, 2fr) minmax(130px, 1fr) minmax(110px, 0.8fr);
-        align-items: center;
+        grid-template-columns: repeat(3, 1fr);
         gap: 1rem;
-    }
-
-    .list-view .member-card h2,
-    .list-view .member-card p {
-        margin: 0;
-    }
-
-    .footer-layout {
-        grid-template-columns: 1fr 1fr;
-        align-items: center;
-        text-align: left;
-    }
-
-    .footer-development {
-        text-align: right;
-    }
-
-    /* Chamber home page */
-
-    .home-main {
-        padding: 0 0 3rem;
-    }
-
-    .hero,
-    .hero>img {
-        height: 520px;
-    }
-
-    .hero-content {
-        left: 50%;
-        width: 100%;
-        transform: translateX(-50%);
-        padding: 3rem 2rem;
-    }
-
-    .home-main .hero h1 {
-        font-size: 3.5rem;
-    }
-
-    .hero-content p {
-        font-size: 1.2rem;
-    }
-
-    .home-grid {
-        grid-template-columns: 1.35fr 1fr;
-        margin-top: 2rem;
-    }
-
-    .spotlights-section {
-        margin-top: 2rem;
-    }
-
-    .spotlights {
-        grid-template-columns:
-            repeat(3, minmax(0, 1fr));
-    }
-
-    .spotlight-card {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .spotlight-card img {
-        width: 150px;
-        height: 110px;
-    }
-}
-
-@media only screen and (min-width: 70rem) {
-    .grid-view {
-        grid-template-columns:
-            repeat(3, minmax(0, 1fr));
     }
 }
