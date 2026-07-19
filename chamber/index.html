@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Richmond Chamber of Commerce | Home</title>
+
+    <meta name="description"
+        content="Connect with Richmond businesses, discover local events, and grow your organization through the Richmond Chamber of Commerce.">
+
+    <meta name="author" content="Norlin Vicente Montenegro">
+
+    <link rel="icon" href="images/favicon.ico">
+
+    <meta property="og:title" content="Richmond Chamber of Commerce">
+
+    <meta property="og:description"
+        content="Supporting business growth and community connections throughout Richmond, Virginia.">
+
+    <meta property="og:image" content="https://vicentenorlin27.github.io/wdd231/chamber/images/hero.webp">
+
+    <meta property="og:url" content="https://vicentenorlin27.github.io/wdd231/chamber/index.html">
+
+    <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/home.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo-area">
+
+            <img src="images/logo.svg" alt="Richmond Chamber of Commerce logo" width="80" height="80">
+
+            <div class="site-name">
+
+                <span>Richmond</span>
+
+                <strong>Chamber of Commerce</strong>
+
+                <p class="tagline">
+                    Supporting Business &amp; Community
+                </p>
+
+            </div>
+
+        </div>
+
+        <button id="menu-toggle" type="button" aria-label="Toggle navigation menu" aria-controls="nav-menu"
+            aria-expanded="false">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+    </header>
+
+    <nav aria-label="Primary Navigation">
+
+        <ul id="nav-menu">
+
+            <li>
+                <a href="index.html" class="active" aria-current="page">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="directory.html">
+                    Directory
+                </a>
+            </li>
+
+            <li>
+                <a href="discover.html">
+                    Discover
+                </a>
+            </li>
+
+            <li>
+                <a href="join.html">
+                    Join
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+    <main class="home-main">
+
+        <section class="hero" aria-labelledby="hero-title">
+
+            <img src="images/hero.webp" alt="Downtown Richmond, Virginia" width="1200" height="600">
+
+            <div class="hero-content">
+
+                <h1 id="hero-title">
+                    Grow Your Business in Richmond
+                </h1>
+
+                <p>
+                    Build connections, discover opportunities,
+                    and help strengthen our local economy.
+                </p>
+
+                <a class="cta-button" href="join.html">
+                    Join the Chamber
+                </a>
+
+            </div>
+
+        </section>
+
+        <div class="home-grid">
+
+            <section class="home-panel events" aria-labelledby="events-title">
+
+                <h2 id="events-title">
+                    Current Events
+                </h2>
+
+                <article>
+
+                    <p class="event-date">
+                        July 24, 2026
+                    </p>
+
+                    <h3>
+                        Richmond Business Networking Breakfast
+                    </h3>
+
+                    <p>
+                        Meet local owners and community leaders
+                        at 8:00 a.m. at the Main Street
+                        Conference Center.
+                    </p>
+
+                </article>
+
+                <article>
+
+                    <p class="event-date">
+                        August 6, 2026
+                    </p>
+
+                    <h3>
+                        Small Business Growth Workshop
+                    </h3>
+
+                    <p>
+                        Learn practical marketing and planning
+                        strategies for growing a Richmond-area
+                        business.
+                    </p>
+
+                </article>
+
+            </section>
+
+            <section class="home-panel weather" aria-labelledby="weather-title">
+
+                <h2 id="weather-title">
+                    Richmond Weather
+                </h2>
+
+                <div id="current-weather" aria-live="polite">
+
+                    <p>Loading current weather...</p>
+
+                </div>
+
+                <h3>Three-Day Forecast</h3>
+
+                <div id="forecast" class="forecast" aria-live="polite">
+                </div>
+
+            </section>
+
+        </div>
+
+        <section class="spotlights-section" aria-labelledby="spotlights-title">
+
+            <h2 id="spotlights-title">
+                Member Spotlights
+            </h2>
+
+            <div id="spotlights" class="spotlights" aria-live="polite">
+
+                <p>Loading member spotlights...</p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        <div class="footer-layout">
+
+            <div class="footer-info">
+
+                <p>
+                    <strong>
+                        Richmond Chamber of Commerce
+                    </strong>
+                </p>
+
+                <p>123 East Main Street</p>
+
+                <p>Richmond, VA 23219</p>
+
+                <p>(804) 555-1234</p>
+
+                <p>info@richmondchamber.org</p>
+
+            </div>
+
+            <div class="footer-development">
+
+                <p>
+                    &copy;
+                    <span id="current-year"></span>
+                    Richmond Chamber of Commerce
+                </p>
+
+                <p>Norlin Vicente Montenegro</p>
+
+                <p>WDD 231</p>
+
+                <p id="last-modified"></p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
